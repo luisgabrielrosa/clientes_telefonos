@@ -7,19 +7,37 @@ https://code.tutsplus.com/es/tutorials/how-to-build-a-simple-rest-api-in-php--cm
 
 
 
-Rutas
+## Rutas
 
 Para agregar nuevas rutas, hay un arreglo que recibe el nombre del modelo, la accion y el metodo.
-Ejemplo: para que una ruta quede: ".../telefono/lista" se debe agregar al arreglo algo como esto: Model:telefono / Accion:lista.
+Ejemplo: para que una ruta quede: ".../telefono/lista" se debe agregar al arreglo algo como esto: 
+Model:telefono / Accion:lista.
 
-Clases Cliente y Telefono
+
+```bash
+# Ejemplo Ruta:
+ ".../telefono/lista"
+```
+
+
+```bash
+# Ejemplo ruta en el arreglo
+
+$rutas[] = [
+    "Model" => "telefono",
+    "Accion" => "lista",
+    "Metodo" => "GET"
+];
+```
+
+## Clases Cliente y Telefono
 Reciben los parametros correspondientes que estan en la base de datos. Llaman los metodos para CRUD y construye las consultas.
 
-Respuesta
+## Respuesta
 Es el estandar de respuesta entre el controlador y la vista
 
-Index
+## Index
 Se registran los controladores y se inicializan en caso de lo que sea llamado en ese momento. Se cargan las rutas y se verifica cual es el metodo a llamar
 
-Bootstrap
+## Bootstrap
 Se cargan los modelos para la utilización en todo el proyecto, la base del controlador y la clase respuesta. Tambien se puede agregar cualquier clase generica que se requiere.
