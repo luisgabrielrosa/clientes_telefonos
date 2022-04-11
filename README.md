@@ -16,7 +16,7 @@ Model:telefono / Accion:lista.
 
 ```bash
 # Ejemplo Ruta:
- ".../telefono/lista"
+ ".../index.php/telefono/lista"
 ```
 
 
