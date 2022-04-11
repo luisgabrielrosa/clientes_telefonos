@@ -1,9 +1,12 @@
 # clientes_telefonos
 
 Se ha utilizado como base para la construccion de esta API el siguiente material:
+```bash
 https://www.php.net
 https://www.w3schools.com/php
 https://code.tutsplus.com/es/tutorials/how-to-build-a-simple-rest-api-in-php--cms-37000
+```
+
 
 
 
