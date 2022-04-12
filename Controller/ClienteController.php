@@ -40,8 +40,12 @@ class ClienteController extends Controller
             $cliente->NOMBRE = $request["NOMBRE"];
             $cliente->APELLIDO = $request["APELLIDO"];
             $cliente->EMAIL = $request["EMAIL"];
-            
-            return $cliente->save();            
+            if($cliente->ValidateEmpty()){
+                return $cliente->save();
+            }else{
+                $respuesta->mensaje = 'No se permiten campos vacios';
+                $respuesta->cabecera = 'HTTP/1.1 500 Input not suported';    
+            }
         }else {
             $respuesta->mensaje = 'Method not supported';
             $respuesta->cabecera = 'HTTP/1.1 422 Unprocessable Entity';
@@ -59,8 +63,12 @@ class ClienteController extends Controller
             $cliente->NOMBRE = $request["NOMBRE"];
             $cliente->APELLIDO = $request["APELLIDO"];
             $cliente->EMAIL = $request["EMAIL"];
-            
-            return $cliente->edit();            
+            if($cliente->ValidateEmpty()){
+                return $cliente->edit();            
+            }else{
+                $respuesta->mensaje = 'No se permiten campos vacios';
+                $respuesta->cabecera = 'HTTP/1.1 500 Input not suported';    
+            }
         }else {
             $respuesta->mensaje = 'Method not supported';
             $respuesta->cabecera = 'HTTP/1.1 422 Unprocessable Entity';

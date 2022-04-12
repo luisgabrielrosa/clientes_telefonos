@@ -40,7 +40,12 @@ class TelefonoController extends Controller
             $telefono = new Telefono();
             $telefono->TELEFONO = $request["TELEFONO"];
             $telefono->CLIENTE_ID = $request["CLIENTE_ID"];
-            return $telefono->save();            
+            if($telefono->ValidateEmpty()){
+                return $telefono->save();            
+            }else{
+                $respuesta->mensaje = 'No se permiten campos vacios';
+                $respuesta->cabecera = 'HTTP/1.1 500 Input not suported';    
+            }
         }else {
             $respuesta->mensaje = 'Method not supported';
             $respuesta->cabecera = 'HTTP/1.1 422 Unprocessable Entity';
@@ -57,7 +62,12 @@ class TelefonoController extends Controller
             $telefono = new Telefono();
             $telefono->TELEFONO = $request["TELEFONO"];
             $telefono->CLIENTE_ID = $request["CLIENTE_ID"];
-            return $telefono->edit();            
+            if($telefono->ValidateEmpty()){
+                return $telefono->edit();
+            }else{
+                $respuesta->mensaje = 'No se permiten campos vacios';
+                $respuesta->cabecera = 'HTTP/1.1 500 Input not suported';    
+            }
         }else {
             $respuesta->mensaje = 'Method not supported';
             $respuesta->cabecera = 'HTTP/1.1 422 Unprocessable Entity';

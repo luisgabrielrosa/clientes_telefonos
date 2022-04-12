@@ -24,4 +24,12 @@ class Cliente extends DB{
         return $this->delete("DELETE FROM `cliente` WHERE `ID` = $this->ID");        
     }
 
+
+    public function ValidateEmpty(){
+        if($this->NOMBRE == "" || $this->APELLIDO == "" || $this->EMAIL == ""){
+            return false;
+        }
+        return true;
+    }
+
 }

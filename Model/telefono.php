@@ -24,5 +24,10 @@ class Telefono extends DB{
     }
 
 
-    
+    public function ValidateEmpty(){
+        if($this->TELEFONO == "" || $this->CLIENTE_ID == ""){
+            return false;
+        }
+        return true;
+    }
 }
